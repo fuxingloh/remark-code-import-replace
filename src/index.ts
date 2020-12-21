@@ -1,4 +1,4 @@
-import path from "path";
+import path, {ParsedPath} from "path";
 import fs from "fs";
 
 import {reduce} from 'lodash';
@@ -18,8 +18,9 @@ interface Options {
 
 interface CodeMeta {
   import: string;
-
-  [key: string]: string | boolean;
+  path: string
+  file: ParsedPath;
+  [key: string]: string | boolean | ParsedPath;
 }
 
 function importCode({baseDir, replace}: Options): Transformer {
@@ -35,7 +36,7 @@ function importCode({baseDir, replace}: Options): Transformer {
       }, {lang: node.lang});
 
       if (meta.import) {
-        meta.file = path.join('./', `${baseDir ?? ''}`, meta.import)
+        meta.file = path.parse(path.join('./', `${baseDir ?? ''}`, meta.import))
         meta.path = path.join(file.cwd, './', `${baseDir ?? ''}`, meta.import)
         node.value = fs.readFileSync(meta.path, 'utf-8').trim()
 
