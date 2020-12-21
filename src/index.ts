@@ -38,13 +38,13 @@ function importCode({baseDir, replace}: Options): Transformer {
         meta.file = path.join('./', `${baseDir ?? ''}`, meta.import)
         meta.path = path.join(file.cwd, './', `${baseDir ?? ''}`, meta.import)
         node.value = fs.readFileSync(meta.path, 'utf-8').trim()
-      }
 
-      if (replace) {
-        const div = u('div', replace(node, meta, {u}))
-        if (div) {
-          // @ts-ignore
-          parent.children.splice(index, 1, div);
+        if (replace) {
+          const div = u('div', replace(node, meta, {u}))
+          if (div) {
+            // @ts-ignore
+            parent.children.splice(index, 1, div);
+          }
         }
       }
     }
