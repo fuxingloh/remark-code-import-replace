@@ -1,0 +1,43 @@
+{
+  "name": "remark-code-import-replace",
+  "version": "0.0.0",
+  "description": "Remark import code from file",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "dist",
+    "nuxt"
+  ],
+  "keywords": [
+    "typescript",
+    "javascript",
+    "transform",
+    "transpile",
+    "markdown",
+    "remark",
+    "remark-code-import"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/lodash": "^4.14.165",
+    "@types/mdast": "^3.0.3",
+    "@types/node": "^14.14.14",
+    "@types/unist": "^2.0.3",
+    "remark": "^11.0.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-typescript": "^7.9.0",
+    "lodash": "^4.17.20",
+    "mdast": "^3.0.0",
+    "unist-builder": "^2.0.3",
+    "unist-util-visit": "^2.0.3"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
