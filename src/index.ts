@@ -25,7 +25,6 @@ interface CodeMeta {
 function importCode({baseDir, replace}: Options): Transformer {
   return function transformer(tree, file) {
     function visitor(node: Code, index: number, parent: Parent): void {
-      console.log(file)
       const parts: string[][] = node.meta?.split(' ')
         .map(part => part.split('=')) || []
 

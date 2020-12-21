@@ -1,7 +1,15 @@
 {
   "name": "remark-code-import-replace",
   "version": "0.0.0",
-  "description": "Remark import code from file",
+  "description": "Remark import code from file and replace nodes for dynamic components rendering.",
+  "author": "Fuxing Loh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fuxingloh/remark-code-import-replace.git"
+  },
+  "bugs": "https://github.com/fuxingloh/remark-code-import-replace/issues",
+  "license": "MIT",
+  "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -20,7 +28,6 @@
     "remark",
     "remark-code-import"
   ],
-  "license": "MIT",
   "devDependencies": {
     "@types/lodash": "^4.14.165",
     "@types/mdast": "^3.0.3",
